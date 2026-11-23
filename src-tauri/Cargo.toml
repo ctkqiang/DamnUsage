@@ -1,0 +1,25 @@
+[workspace]
+members = ["crates/damnusage-core"]
+
+[package]
+name = "damnusage"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "damnusage_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+async-trait = "0.1"
+damnusage-core = { path = "crates/damnusage-core" }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tauri = { version = "2", features = ["macos-private-api", "tray-icon"] }
+tokio = { version = "1", features = ["rt-multi-thread", "time", "sync"] }
+
+[target.'cfg(target_os = "macos")'.dependencies]
+objc = "0.2"

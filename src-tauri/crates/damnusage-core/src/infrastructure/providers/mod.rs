@@ -1,0 +1,10 @@
+pub mod amazon_bedrock;
+pub mod antigravity;
+pub mod aws_sigv4;
+pub mod chinese_apis;
+pub mod claude_code;
+pub mod deepseek;
+pub mod demo_simulator;
+pub mod global_apis;
+pub mod openrouter;
+pub mod registry;
